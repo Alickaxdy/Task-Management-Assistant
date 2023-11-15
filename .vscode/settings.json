@@ -1,0 +1,4 @@
+{
+    "c-cpp-compile-run.cpp-compiler": "/usr/local/Cellar/gcc/13.2.0/bin/g++-13",
+    "c-cpp-compile-run.c-compiler": "gcc"
+}
