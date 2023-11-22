@@ -6,35 +6,51 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1088</width>
-    <height>624</height>
+    <width>1680</width>
+    <height>1050</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 251, 255), stop:1 rgb(0, 160, 200));
+</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QCalendarWidget" name="calendar">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>70</y>
-      <width>611</width>
-      <height>431</height>
+      <x>100</x>
+      <y>14</y>
+      <width>1011</width>
+      <height>731</height>
      </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(91, 207, 255);
+alternate-background-color: rgb(0, 255, 204);
+selection-background-color: rgb(171, 255, 92);
+selection-color: rgb(45, 45, 45);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>90</y>
-      <width>611</width>
-      <height>16</height>
+      <x>100</x>
+      <y>39</y>
+      <width>1011</width>
+      <height>30</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(167, 255, 255);</string>
+    </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>Date!</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -46,8 +62,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1088</width>
-     <height>23</height>
+     <width>1680</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>

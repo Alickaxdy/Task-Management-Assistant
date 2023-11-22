@@ -12,7 +12,7 @@ class UI(QMainWindow):
         self.show()
     def grab_date(self):
         dateSelected = self.calendar.selectedDate()
-        self.label.setText(str(dateSelected.toPyDate()))
+        self.label.setText(str(dateSelected.toString()))
 app = QApplication(sys.argv)
 UIWindow = UI()
 app.exec()
