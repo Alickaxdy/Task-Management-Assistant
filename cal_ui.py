@@ -12,7 +12,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1680, 1050)
+        MainWindow.resize(2100, 1260)
+        MainWindow.setMinimumSize(QtCore.QSize(2100, 1260))
         MainWindow.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 251, 255), stop:1 rgb(0, 160, 200));\n"
 "")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
@@ -30,9 +31,13 @@ class Ui_MainWindow(object):
         self.label.setStyleSheet("background-color: rgb(167, 255, 255);")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
+        self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(1020, 0, 141, 51))
+        self.pushButton.setStyleSheet("")
+        self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1680, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 2100, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -46,3 +51,4 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "Date!"))
+        self.pushButton.setText(_translate("MainWindow", "To Screen2"))
