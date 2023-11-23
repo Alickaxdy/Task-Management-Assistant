@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/owner/Documents/桌面文件/记带功/Task-Management-Assistant/Task-Management-Assistant",
-      "program": "c:/Users/owner/Documents/桌面文件/记带功/Task-Management-Assistant/Task-Management-Assistant/build/Debug/outDebug",
+      "cwd": "c:/Users/owner/Documents/桌面文件/记带功/Task-Management-Assistant",
+      "program": "c:/Users/owner/Documents/桌面文件/记带功/Task-Management-Assistant/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
