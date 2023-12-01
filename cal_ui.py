@@ -36,68 +36,24 @@ class Ui_MainWindow(object):
         self.pushButton.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 255, 79), stop:1 rgb(156, 255, 12))")
         self.pushButton.setObjectName("pushButton")
         self.scrollArea = QtWidgets.QScrollArea(parent=self.centralwidget)
-        self.scrollArea.setGeometry(QtCore.QRect(1120, 150, 521, 731))
+        self.scrollArea.setGeometry(QtCore.QRect(1120, 150, 521, 721))
+        self.scrollArea.setMinimumSize(QtCore.QSize(0, 0))
+        self.scrollArea.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.scrollArea.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 124, 255), stop:1 rgb(113, 103, 255))\n"
 "")
+        self.scrollArea.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 519, 729))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 519, 1224))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.verticalScrollBar = QtWidgets.QScrollBar(parent=self.scrollAreaWidgetContents)
-        self.verticalScrollBar.setGeometry(QtCore.QRect(500, 0, 20, 731))
-        self.verticalScrollBar.setStyleSheet("QScrollBar:vertical {\n"
-"    background-color: rgb(251, 166, 255);\n"
-"    margin: 15px 0 15px 0;\n"
-"    border-radius: 0px;\n"
-"}\n"
-"QScrollBar::handle:vertical {\n"
-"    background-color: rgb(255, 80, 52);\n"
-"    min-height: 30px;\n"
-"    border-radius: 4px;\n"
-"}\n"
-"QScrollBar::handle:vertical:hover {\n"
-"    background-color: rgb(239, 0, 255);\n"
-"}\n"
-"QScrollBar::handle:vertical:pressed {\n"
-"    background-color: rgb(246, 0, 94);\n"
-"}\n"
-"QScrollBar::sub-line:vertical {\n"
-"    border: none;\n"
-"    background-color: rgb(217, 255, 36);\n"
-"    height: 15px;\n"
-"    border-top-left-radius:4px;\n"
-"    border-top-right-radius: 4px;\n"
-"    border-bottom-left-radius:0px;\n"
-"    border-bottom-right-radius:0px;\n"
-"    subcontrol-position: top;\n"
-"    subcontrol-origin: margin;\n"
-"}\n"
-"QScrollBar::sub-line:vertical:hover {\n"
-"    background-color: rgb(100, 255, 92);\n"
-"}\n"
-"QScrollBar::sub-line:vertical:pressed {\n"
-"    background-color: rgb(88, 245, 255);\n"
-"}\n"
-"QScrollBar::add-line:vertical {\n"
-"    border: none;\n"
-"    background-color: rgb(217, 255, 36);\n"
-"    height: 15px;\n"
-"    border-top-left-radius:0px;\n"
-"    border-top-right-radius: 0px;\n"
-"    border-bottom-left-radius: 4px;\n"
-"    border-bottom-right-radius: 4px;\n"
-"    subcontrol-position: bottom;\n"
-"    subcontrol-origin: margin;\n"
-"}\n"
-"QScrollBar::add-line:vertical:hover {\n"
-"    background-color: rgb(100, 255, 92);\n"
-"}\n"
-"QScrollBar::add-line:vertical:pressed {\n"
-"    background-color: rgb(88, 245, 255);\n"
-"}")
-        self.verticalScrollBar.setOrientation(QtCore.Qt.Orientation.Vertical)
-        self.verticalScrollBar.setObjectName("verticalScrollBar")
+        self.gridLayout = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
+        self.gridLayout.setObjectName("gridLayout")
+        self.widget = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents)
+        self.widget.setMinimumSize(QtCore.QSize(0, 1200))
+        self.widget.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.widget.setObjectName("widget")
+        self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.frame = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(1210, -10, 120, 80))
