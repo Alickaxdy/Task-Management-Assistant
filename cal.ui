@@ -72,7 +72,8 @@ selection-color: rgb(45, 45, 45);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(61, 255, 79), stop:1 rgb(156, 255, 12))</string>
+     <string notr="true">background-color: rgb(0, 209, 209);
+borther: none;</string>
     </property>
     <property name="text">
      <string>To Screen2</string>
@@ -132,23 +133,123 @@ selection-color: rgb(45, 45, 45);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">/*Background Color*/
-* {background-color: rgb(85, 170, 127);}
+* {background-color:  rgb(0, 190, 140);
+}
 /*Vertical Scrollbar*/
 QScrollBar:vertical {
 	border: none;
-	background-color: rgb(116, 170, 0);
+	background-color: rgb(0, 170, 127);
 	width: 16px;
-	border radius: 0px;
+	margin: 15px 0 15px 0;
+	border-radius: 8px;
 }
 /* Handle Bar Vertical*/
 QScrollBar::handle:vertical {
-	background-color: rgb(116, 170, 0);
+	background-color: rgb(0, 189, 95);
 	min-height: 30px;
-	border radius: 5px;
 }
 QScrollBar::handle:vertical:hover {
-	
-	background-color: rgb(0, 0, 0);
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::handle:vertical:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*button top scrollbar*/
+QScrollBar::sub-line:vertical{
+	border: none;
+	background-color:  rgb(0, 239, 115);
+	height: 14;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::sub-line:vertical:pressed {
+	background-color: rgb(0, 140, 103);
+}
+
+/*button bottom  scrollbar*/
+QScrollBar::add-line:vertical{
+	border: none;
+	background-color:  rgb(0, 239, 115);
+	height: 14;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::add-line:vertical:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*Reset Arrow*/
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+	background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+	background-color: rgb(0, 207, 152);
+}
+
+QScrollBar:horizontal {
+	border: none;
+	background-color: rgb(0, 239, 115);
+	margin: 0px 15 0px 15;
+	hieght: 14px;
+}
+/* Handle Bar Horizontal*/
+QScrollBar::handle:horizontal {
+	background-color: rgb(0, 189, 95);
+	min-width: 30px;
+}
+QScrollBar::handle:horizontal:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::handle:horizontal:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*button top scrollbar*/
+QScrollBar::sub-line:horizontal{
+	border: none;
+	background-color:  rgb(0, 239, 115);
+	width: 15;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	subcontrol-position: left;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::sub-line:horizontal:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*button bottom  scrollbar*/
+QScrollBar::add-line:horizontal{
+	border: none;
+	background-color:  rgb(0, 239, 115);
+	width: 15;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: right;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::add-line:horizontal:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*Reset Arrow*/
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal {
+	background: none;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+	background-color: rgb(0, 207, 152);
 }</string>
     </property>
     <property name="widgetResizable">
@@ -158,7 +259,7 @@ QScrollBar::handle:vertical:hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-92</y>
+       <y>0</y>
        <width>718</width>
        <height>818</height>
       </rect>
@@ -173,7 +274,7 @@ QScrollBar::handle:vertical:hover {
          </size>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(85, 170, 127);</string>
+         <string notr="true">background-color: rgb(50, 220, 170);</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
