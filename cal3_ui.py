@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant-1\cal2.ui'
+# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant-1\cal3.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -12,11 +12,11 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1629, 974)
+        Dialog.resize(400, 300)
         Dialog.setStyleSheet("color: rgb(70, 255, 153);\n"
-"background-color: rgb(85, 170, 255);")
+"background-color: rgb(85, 170, 127);")
         self.button = QtWidgets.QPushButton(parent=Dialog)
-        self.button.setGeometry(QtCore.QRect(60, 80, 181, 61))
+        self.button.setGeometry(QtCore.QRect(110, 110, 181, 61))
         self.button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
 "color: rgb(0, 0, 0);")
         self.button.setObjectName("button")

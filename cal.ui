@@ -71,37 +71,31 @@ selection-color: rgb(45, 45, 45);</string>
       <height>61</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>MS Reference Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <underline>false</underline>
+      <strikeout>false</strikeout>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(0, 209, 209);
 borther: none;</string>
     </property>
     <property name="text">
-     <string>To Screen2</string>
-    </property>
-   </widget>
-   <widget class="QFrame" name="frame">
-    <property name="geometry">
-     <rect>
-      <x>1210</x>
-      <y>-10</y>
-      <width>120</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+     <string>Switch to Task Mode</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>1120</x>
-      <y>100</y>
+      <x>1020</x>
+      <y>70</y>
       <width>521</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -125,10 +119,10 @@ borther: none;</string>
    <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>1120</x>
-      <y>150</y>
+      <x>1020</x>
+      <y>130</y>
       <width>521</width>
-      <height>661</height>
+      <height>671</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -260,8 +254,8 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>718</width>
-       <height>818</height>
+       <width>502</width>
+       <height>839</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -269,8 +263,8 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
        <widget class="QFrame" name="frame_2">
         <property name="minimumSize">
          <size>
-          <width>700</width>
-          <height>800</height>
+          <width>480</width>
+          <height>821</height>
          </size>
         </property>
         <property name="styleSheet">
@@ -282,10 +276,123 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
+        <widget class="QLabel" name="label_3">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>471</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Goal Satisfaction</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_4">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>80</y>
+           <width>471</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Satisfaction Differences</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_5">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>150</y>
+           <width>471</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Event n:</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
        </widget>
       </item>
      </layout>
     </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>1220</x>
+      <y>0</y>
+      <width>171</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Reference Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(0, 170, 127);
+borther: none;</string>
+    </property>
+    <property name="text">
+     <string>Add Wanted Tasks</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>1420</x>
+      <y>0</y>
+      <width>171</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Reference Sans Serif</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(52, 255, 249);
+borther: none;</string>
+    </property>
+    <property name="text">
+     <string>Add Wanted Tasks</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
