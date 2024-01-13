@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1629</width>
-    <height>974</height>
+    <width>1680</width>
+    <height>1050</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,19 +20,193 @@ background-color: rgb(85, 170, 255);</string>
   <widget class="QPushButton" name="button">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>80</y>
+     <x>1350</x>
+     <y>740</y>
      <width>181</width>
      <height>61</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Charter</family>
+     <pointsize>20</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);</string>
+    <string notr="true">* {background-color: rgb(173, 221, 231);
+color: rgb(34, 137, 146);
+border-width: 9px;
+border-style: solid;
+border-radius: 25px;
+border-color: rgb(173, 221, 231);
+}</string>
    </property>
    <property name="text">
-    <string>Click Me Back Mainwindow!</string>
+    <string>DONE!</string>
    </property>
+  </widget>
+  <widget class="QScrollArea" name="scrollArea">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>40</y>
+     <width>1551</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">* {background-color: rgb(173, 221, 231);
+border-width: 12px;
+border-style: solid;
+border-radius: 40px;
+border-color: rgb(173, 221, 231);
+}
+QScrollBar:vertical {
+	border: none;
+	background-color: rgb(88, 182, 255);
+	width: 16px;
+	margin: 15px 0 15px 0;
+	border-radius: 8px;
+}
+/* Handle Bar Vertical*/
+QScrollBar::handle:vertical {
+	background-color: rgb(98, 161, 232);
+	min-height: 30px;
+}
+QScrollBar::handle:vertical:hover {
+	background-color: rgb(173, 244, 179);
+}
+QScrollBar::handle:vertical:pressed {
+	background-color: rgb(128, 217, 129);
+}
+/*button top scrollbar*/
+QScrollBar::sub-line:vertical{
+	border: none;
+	background-color:  rgb(110, 248, 243);
+	height: 15;
+	border-top-left-radius: 7px;
+	border-top-right-radius: 7px;
+	subcontrol-position: top;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::sub-line:vertical:pressed {
+	background-color: rgb(0, 140, 103);
+}
+
+/*button bottom  scrollbar*/
+QScrollBar::add-line:vertical{
+	border: none;
+	background-color:  rgb(110, 248, 243);
+	height: 15;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: bottom;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::add-line:vertical:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*Reset Arrow*/
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+	background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+	background-color: rgb(225, 215, 222);
+}
+
+QScrollBar:horizontal {
+	border: none;
+	background-color: rgb(0, 239, 115);
+	margin: 0px 15 0px 15;
+	hieght: 14px;
+}
+/* Handle Bar Horizontal*/
+QScrollBar::handle:horizontal {
+	background-color: rgb(0, 189, 95);
+	min-width: 30px;
+}
+QScrollBar::handle:horizontal:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::handle:horizontal:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*button top scrollbar*/
+QScrollBar::sub-line:horizontal{
+	border: none;
+	background-color:  rgb(0, 239, 115);
+	width: 15;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	subcontrol-position: left;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::sub-line:horizontal:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*button bottom  scrollbar*/
+QScrollBar::add-line:horizontal{
+	border: none;
+	background-color:  rgb(0, 239, 115);
+	width: 15;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	subcontrol-position: right;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:horizontal:hover {
+	background-color: rgb(0, 161, 118);
+}
+QScrollBar::add-line:horizontal:pressed {
+	background-color: rgb(0, 140, 103);
+}
+/*Reset Arrow*/
+QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal {
+	background: none;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+	background-color: rgb(0, 207, 152);
+}</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1527</width>
+      <height>524</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>500</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
  <resources/>

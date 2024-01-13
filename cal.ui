@@ -254,8 +254,8 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>502</width>
-       <height>839</height>
+       <width>519</width>
+       <height>845</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -281,7 +281,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
           <rect>
            <x>10</x>
            <y>20</y>
-           <width>471</width>
+           <width>461</width>
            <height>31</height>
           </rect>
          </property>
@@ -302,7 +302,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
           <rect>
            <x>10</x>
            <y>80</y>
-           <width>471</width>
+           <width>461</width>
            <height>31</height>
           </rect>
          </property>
@@ -323,7 +323,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
           <rect>
            <x>10</x>
            <y>150</y>
-           <width>471</width>
+           <width>461</width>
            <height>31</height>
           </rect>
          </property>
@@ -401,7 +401,7 @@ borther: none;</string>
      <x>0</x>
      <y>0</y>
      <width>2100</width>
-     <height>23</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
