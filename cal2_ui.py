@@ -16,7 +16,7 @@ class Ui_Dialog(object):
         Dialog.setStyleSheet("color: rgb(70, 255, 153);\n"
 "background-color: rgb(85, 170, 255);")
         self.button = QtWidgets.QPushButton(parent=Dialog)
-        self.button.setGeometry(QtCore.QRect(1350, 740, 181, 61))
+        self.button.setGeometry(QtCore.QRect(750, 820, 181, 101))
         font = QtGui.QFont()
         font.setFamily("Charter")
         font.setPointSize(20)
@@ -29,7 +29,9 @@ class Ui_Dialog(object):
 "border-style: solid;\n"
 "border-radius: 25px;\n"
 "border-color: rgb(173, 221, 231);\n"
-"}")
+"font: bold;\n"
+"}\n"
+"")
         self.button.setObjectName("button")
         self.scrollArea = QtWidgets.QScrollArea(parent=Dialog)
         self.scrollArea.setGeometry(QtCore.QRect(60, 40, 1551, 381))
@@ -167,6 +169,42 @@ class Ui_Dialog(object):
         self.widget.setObjectName("widget")
         self.verticalLayout.addWidget(self.widget)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
+        self.pushButton = QtWidgets.QPushButton(parent=Dialog)
+        self.pushButton.setGeometry(QtCore.QRect(1412, 510, 201, 151))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}")
+        self.pushButton.setObjectName("pushButton")
+        self.lineEdit = QtWidgets.QLineEdit(parent=Dialog)
+        self.lineEdit.setGeometry(QtCore.QRect(110, 510, 1281, 151))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit.setFont(font)
+        self.lineEdit.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}")
+        self.lineEdit.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lineEdit.setObjectName("lineEdit")
+        self.label = QtWidgets.QLabel(parent=Dialog)
+        self.label.setGeometry(QtCore.QRect(730, 700, 281, 61))
+        self.label.setObjectName("label")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -175,3 +213,6 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.button.setText(_translate("Dialog", "DONE!"))
+        self.pushButton.setText(_translate("Dialog", "PushButton"))
+        self.lineEdit.setText(_translate("Dialog", "Enter Your Task!"))
+        self.label.setText(_translate("Dialog", "TextLabel"))
