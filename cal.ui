@@ -74,7 +74,7 @@ selection-color: rgb(45, 45, 45);</string>
     <property name="font">
      <font>
       <family>MS Reference Sans Serif</family>
-      <pointsize>14</pointsize>
+      <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
       <underline>false</underline>
@@ -87,7 +87,7 @@ borther: none;
 font: bold;</string>
     </property>
     <property name="text">
-     <string>Switch to Task Mode</string>
+     <string>Add Wanted Tasks</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -255,8 +255,8 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
       <rect>
        <x>0</x>
        <y>0</y>
-       <width>519</width>
-       <height>845</height>
+       <width>502</width>
+       <height>839</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -357,7 +357,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
     <property name="font">
      <font>
       <family>MS Reference Sans Serif</family>
-      <pointsize>14</pointsize>
+      <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -368,7 +368,7 @@ borther: none;
 font: bold;</string>
     </property>
     <property name="text">
-     <string>Add Wanted Tasks</string>
+     <string>Switch to Task Mode</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -383,7 +383,7 @@ font: bold;</string>
     <property name="font">
      <font>
       <family>MS Reference Sans Serif</family>
-      <pointsize>14</pointsize>
+      <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -394,7 +394,7 @@ borther: none;
 font: bold;</string>
     </property>
     <property name="text">
-     <string>Add Wanted Tasks</string>
+     <string>Plan for the Day</string>
     </property>
    </widget>
   </widget>
@@ -404,7 +404,7 @@ font: bold;</string>
      <x>0</x>
      <y>0</y>
      <width>2100</width>
-     <height>24</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>

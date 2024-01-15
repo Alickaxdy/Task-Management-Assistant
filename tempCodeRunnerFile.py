@@ -1,1 +1,2 @@
-Screen2
+
+        delete_layout.deleteLater()
