@@ -1,5 +1,6 @@
 import os
 import sys
+import struct
 from PyQt6 import QtCore, QtGui, QtWidgets, uic
 from PyQt6.uic import load_ui
 from PyQt6.QtWidgets import *
@@ -13,6 +14,8 @@ j = 1
 c = ""
 v = 0
 eventlist = {}
+deletelist = {}
+buttonlist = []
 class ScrollableButtonWidget(QWidget):
     def __init__(self):
         super().__init__()
@@ -22,6 +25,18 @@ class ScrollableButtonWidget(QWidget):
         # Create buttons and add them to the layout
 
         # Set the layout for the widget
+def clear_layout(layout):
+# Loop in reverse order to avoid indexing issues
+    for i in reversed(range(layout.count())):
+        item = layout.itemAt(i)
+        
+        # Remove the item from layout
+        layout.removeItem(item)
+        
+        # Check if the item is a widget
+        if widget := item.widget():
+            # Delete the widget
+            widget.deleteLater()
 class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
@@ -63,6 +78,7 @@ class Screen4(QDialog):
 class Screen2(QDialog):
     def __init__(self):
         self.parentlayout = QGridLayout()
+        self.button_group = QButtonGroup()
         self.parentlayout.setVerticalSpacing(40)
         self.groupBox = QGroupBox()
         button_widget = ScrollableButtonWidget()
@@ -72,14 +88,17 @@ class Screen2(QDialog):
         self.lineedit1 = self.findChild(QLineEdit, "lineEdit")
         self.lineedit1.returnPressed.connect(self.settext)
         self.label1 = self.findChild(QLabel, "label")
+        self.deletebutton = self.findChild(QPushButton, "pushButton")
         self.button1.clicked.connect(self.gotoscreen1)
+        self.deletebutton.clicked.connect(self.deleteselectedbutton)
+        global deletelist
     def gotoscreen1(self):
         widget.setCurrentIndex(0)
     def settext(self):
         global v
-        self.button_group = QButtonGroup(self)
         global value
         global eventlist
+        global buttonlist
         global i
         global j
         global c
@@ -100,8 +119,10 @@ class Screen2(QDialog):
                 )
             eventlist[value].setFixedSize(180, 90)
             v += 1
-            self.button_group.addButton(eventlist[value],v)
-            self.parentlayout.addWidget(eventlist[value], i, j*2-1)
+            self.button_group.addButton(eventlist[value])
+            deletelist.update({eventlist[value]: 0})
+            buttonlist.append(eventlist[value])
+            self.parentlayout.addWidget(eventlist[value], i, j)
             j += 1
             self.groupBox.setLayout(self.parentlayout)
             self.scrollarea = self.findChild(QScrollArea, "scrollArea")
@@ -110,34 +131,48 @@ class Screen2(QDialog):
             if j==3:
                 i += 1
                 j = 1
-            print(i)
-            self.button_group.buttonClicked.connect(lambda: self.showDeleteButton(c))
-    def showDeleteButton(self):
-        # Create a delete
-        button = self.button_group.id(button)
-        delete_button = QPushButton('Delete')
-        delete_button.clicked.connect(lambda: self.deleteButtonClicked(x, button, delete_button))
-
-        # Find the position of the clicked button in the grid layout
-        position = [i, j]
-
-        # Create a layout for the delete button
-
-        # Add the delete button layout next to the clicked button in the grid layout
-        self.parentlayout.addWidget(delete_button, position[0], position[1]*2)
-    def deleteButtonClicked(self, x, original_button, delete_button):
-        # Handle delete button click here
-        print(f"Delete button clicked for {original_button.text()}")
-
-        # Remove the delete button layout
-        delete_layout = delete_button.parent().layout()
-        delete_layout.removeWidget(delete_button)
-        delete_button.setParent(None)
-        delete_layout = original_button.parent().layout()
-        delete_layout.removeWidget(original_button)
-        original_button.setParent(None)
-        eventlist.pop(x)
-        
+            self.button_group.buttonClicked.connect(self.deletebuttonfunc)
+    def deletebuttonfunc(self, button):
+        if deletelist[button]==0:
+            button.setStyleSheet(
+            "background-color: rgb(45, 45, 180);"
+            "border-width: 1px;"
+            "border-style: solid;"
+            "border-radius: 30px;"
+            "border-color: rgb(126, 150, 160);"
+            )
+            deletelist[button]=1
+        else:
+            eventlist[value].setStyleSheet(
+                "background-color: rgb(85, 85, 255);"
+                "border-width: 1px;"
+                "border-style: solid;"
+                "border-radius: 30px;"
+                "border-color: rgb(173, 221, 231);"
+                )
+            deletelist[button]=0
+    def deleteselectedbutton(self):
+        clear_layout(self.parentlayout)
+        deletelist2 = []
+        for button in deletelist:
+            deletelist2.append(button)
+            if deletelist[button] == 1:
+                print("hhh", deletelist[button])
+                self.button_group.removeButton(eventlist[button.text()])
+                eventlist.pop(button.text())
+        for button in deletelist2:
+            deletelist.pop(button)
+        i=0
+        j=0
+        for button in self.button_group.buttons():
+            print("hahaha", button.text())
+            self.parentlayout.addWidget(button, i, j)
+            j += 1
+            if j==3:
+                i += 1
+                j = 1
+        self.groupBox.setLayout(self.parentlayout)
+        self.scrollarea.setWidget(self.groupBox)
 app = QApplication(sys.argv)
 
 widget=QtWidgets.QStackedWidget()

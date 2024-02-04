@@ -54,7 +54,7 @@ font: bold;
     <rect>
      <x>80</x>
      <y>50</y>
-     <width>1551</width>
+     <width>1311</width>
      <height>381</height>
     </rect>
    </property>
@@ -189,7 +189,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1527</width>
+      <width>1287</width>
       <height>357</height>
      </rect>
     </property>
@@ -199,8 +199,8 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>1412</x>
-     <y>510</y>
+     <x>1420</x>
+     <y>170</y>
      <width>201</width>
      <height>151</height>
     </rect>
@@ -223,7 +223,7 @@ font: bold;
 }</string>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Delete</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit">

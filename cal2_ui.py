@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant\cal2.ui'
+# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant\Task-Management-Assistant\cal2.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -34,7 +34,7 @@ class Ui_Dialog(object):
 "")
         self.button.setObjectName("button")
         self.scrollArea = QtWidgets.QScrollArea(parent=Dialog)
-        self.scrollArea.setGeometry(QtCore.QRect(80, 50, 1551, 381))
+        self.scrollArea.setGeometry(QtCore.QRect(80, 50, 1311, 381))
         self.scrollArea.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
 "border-width: 12px;\n"
 "border-style: solid;\n"
@@ -159,13 +159,13 @@ class Ui_Dialog(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1527, 357))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1287, 357))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.pushButton = QtWidgets.QPushButton(parent=Dialog)
-        self.pushButton.setGeometry(QtCore.QRect(1412, 510, 201, 151))
+        self.pushButton.setGeometry(QtCore.QRect(1420, 170, 201, 151))
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
@@ -224,6 +224,6 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.button.setText(_translate("Dialog", "DONE!"))
-        self.pushButton.setText(_translate("Dialog", "PushButton"))
+        self.pushButton.setText(_translate("Dialog", "Delete"))
         self.lineEdit.setText(_translate("Dialog", "Enter Your Task!"))
         self.label.setText(_translate("Dialog", "TextLabel"))
