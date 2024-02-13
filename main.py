@@ -55,10 +55,13 @@ class UI(QMainWindow):
         self.button3 = self.findChild(QPushButton, "pushButton_3")
         self.button1.clicked.connect(self.gotoscreen2)
         self.button2.clicked.connect(self.gotoscreen3)
-        self.button2.clicked.connect(self.gotoscreen4)
+        self.button3.clicked.connect(self.gotoscreen4)
         self.scrollarea = self.findChild(QScrollArea, "scrollArea")
         self.scrollarea.setWidgetResizable(True)
         self.show()
+    def grab_date(self):
+        dateSelected = self.calendar.selectedDate()
+        self.label.setText(str(dateSelected.toString()))
     def gotoscreen2(self):
         widget.setCurrentIndex(1)
 
@@ -66,9 +69,36 @@ class UI(QMainWindow):
         widget.setCurrentIndex(2)
     def gotoscreen4(self):
         widget.setCurrentIndex(3)
-    def grab_date(self):
-        dateSelected = self.calendar.selectedDate()
-        self.label.setText(str(dateSelected.toString()))
+        global scrollarea2
+        global parentlayout
+        global groupBox2
+        global select_button
+        print(parentlayout.count())
+        global parentlayout2
+        parentlayout2 = QGridLayout()
+        global button_group2
+        parentlayout2.setVerticalSpacing(40)
+        global groupBox2
+        groupBox2 = QGroupBox()
+        new_widget = QWidget()
+        parentlayout2 = QGridLayout(new_widget)
+        select_button = {}
+        for i in range(parentlayout.count()):
+            original_btn = parentlayout.itemAt(i).widget()
+            self.new_btn = QPushButton(original_btn.text(), self)
+            self.new_btn.setFixedSize(180,90)
+            self.new_btn.setStyleSheet(
+                "background-color: rgb(85, 85, 255);"
+                "border-width: 1px;"
+                "border-style: solid;"
+                "border-radius: 30px;"
+                "border-color: rgb(173, 221, 231);"
+                )
+            select_button.update({self.new_btn.text() : 0})
+            button_group2.addButton(self.new_btn)
+            parentlayout2.addWidget(self.new_btn, int(i/2)+1,i%2+1)
+        groupBox2.setLayout(parentlayout2)
+        scrollarea2.setWidget(groupBox2)
 class Screen3(QDialog):
     def __init__(self):
         super(Screen3,self).__init__()
@@ -77,9 +107,6 @@ class Screen3(QDialog):
         self.button1.clicked.connect(self.gotoscreen1)
     def gotoscreen1(self):
         widget.setCurrentIndex(0)
-class Screen4(QDialog):
-    def __init__(self):
-        super(Screen4,self).__init__()
 class Screen2(QDialog):
     def __init__(self):
         global parentlayout
@@ -104,7 +131,6 @@ class Screen2(QDialog):
         self.scrollarea = self.findChild(QScrollArea, "scrollArea")
         global deletelist
         button_group.buttonClicked.connect(self.deletebuttonfunc)
-        
     def gotoscreen1(self):
         widget.setCurrentIndex(0)
     def settext(self):
@@ -115,6 +141,7 @@ class Screen2(QDialog):
         global eventlist
         global buttonlist
         global c
+        global parentlayout
         everyspace = 1580
         space = 70
         value = self.lineedit1.text()
@@ -167,6 +194,7 @@ class Screen2(QDialog):
     def deleteselectedbutton(self):
         global i
         global j
+        global parentlayout
         i=1
         j=1
         groupBox.update()  # Refresh groupBox display
@@ -211,6 +239,49 @@ class Screen2(QDialog):
             self.scrollarea.setWidgetResizable(True)
             self.scrollarea.setWidget(groupBox)
         restbutton.clear()
+class Screen4(QDialog):
+    def __init__(self):
+        global scrollarea2
+        global parentlayout
+        global parentlayout2
+        parentlayout2 = QGridLayout()
+        global button_group2
+        button_group2 = QButtonGroup()
+        parentlayout2.setVerticalSpacing(40)
+        global groupBox2
+        groupBox2 = QGroupBox()
+        new_widget = QWidget()
+        parentlayout2 = QGridLayout(new_widget)
+        super(Screen4,self).__init__()
+        uic.loadUi(os.path.join(basedir, "cal4.ui"), self)
+        scrollarea2 = self.findChild(QScrollArea, "scrollArea")
+        button_group2.buttonClicked.connect(self.selectbutton)
+        for button in button_group2.buttons():
+            button.clicked.connect(self.on_button_clicked)
+    def on_button_clicked(self, button):
+        print(button.text())
+    def selectbutton(self, button):
+        global select_button
+        print(select_button[button.text()], button.text())
+        if select_button[button.text()]==0:
+            button.setStyleSheet(
+            "background-color: rgb(45, 45, 180);"
+            "border-width: 1px;"
+            "border-style: solid;"
+            "border-radius: 30px;"
+            "border-color: rgb(126, 150, 160);"
+            )
+            select_button[button.text()]=1
+        else:
+            button.setStyleSheet(
+                "background-color: rgb(85, 85, 255);"
+                "border-width: 1px;"
+                "border-style: solid;"
+                "border-radius: 30px;"
+                "border-color: rgb(173, 221, 231);"
+                )
+            select_button[button.text()]=0
+        
         
         
         
@@ -220,8 +291,10 @@ widget=QtWidgets.QStackedWidget()
 UIWindow = UI()
 screen2=Screen2()
 screen3 = Screen3()
+screen4 = Screen4()
 widget.addWidget(UIWindow)
 widget.addWidget(screen2)
 widget.addWidget(screen3)
+widget.addWidget(screen4)
 widget.show()
 app.exec()

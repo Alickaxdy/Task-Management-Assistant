@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant\cal.ui'
+# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant\Task-Management-Assistant\cal.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -178,7 +178,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 502, 839))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 503, 839))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
