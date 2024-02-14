@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1675, 990)
+        Dialog.resize(1680, 1050)
         Dialog.setStyleSheet("color: rgb(70, 255, 153);\n"
 "background-color: rgb(85, 170, 255);")
         self.scrollArea = QtWidgets.QScrollArea(parent=Dialog)
@@ -164,10 +164,11 @@ class Ui_Dialog(object):
 "font: bold;\n"
 "}\n"
 "")
+        self.label.setText("")
         self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label.setObjectName("label")
         self.lineEdit = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit.setGeometry(QtCore.QRect(350, 680, 161, 71))
+        self.lineEdit.setGeometry(QtCore.QRect(690, 640, 161, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -185,7 +186,7 @@ class Ui_Dialog(object):
         self.lineEdit.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit.setObjectName("lineEdit")
         self.label_2 = QtWidgets.QLabel(parent=Dialog)
-        self.label_2.setGeometry(QtCore.QRect(130, 680, 201, 71))
+        self.label_2.setGeometry(QtCore.QRect(790, 530, 201, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -205,7 +206,7 @@ class Ui_Dialog(object):
         self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.lineEdit_2 = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit_2.setGeometry(QtCore.QRect(560, 680, 151, 71))
+        self.lineEdit_2.setGeometry(QtCore.QRect(940, 640, 151, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -223,7 +224,7 @@ class Ui_Dialog(object):
         self.lineEdit_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.label_3 = QtWidgets.QLabel(parent=Dialog)
-        self.label_3.setGeometry(QtCore.QRect(480, 680, 111, 71))
+        self.label_3.setGeometry(QtCore.QRect(840, 640, 111, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -242,6 +243,62 @@ class Ui_Dialog(object):
 "")
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(parent=Dialog)
+        self.label_4.setGeometry(QtCore.QRect(1440, 50, 101, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("* {\n"
+"    background-color: rgb(173, 221, 231);\n"
+"color: rgb(170, 85, 255);\n"
+"border-width: 3px;\n"
+"border-style: solid;\n"
+"border-radius: 15px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_4.setObjectName("label_4")
+        self.button = QtWidgets.QPushButton(parent=Dialog)
+        self.button.setGeometry(QtCore.QRect(250, 870, 201, 101))
+        font = QtGui.QFont()
+        font.setFamily("Charter")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.button.setFont(font)
+        self.button.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.button.setObjectName("button")
+        self.button_2 = QtWidgets.QPushButton(parent=Dialog)
+        self.button_2.setGeometry(QtCore.QRect(870, 870, 201, 101))
+        font = QtGui.QFont()
+        font.setFamily("Charter")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.button_2.setFont(font)
+        self.button_2.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.button_2.setObjectName("button_2")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -249,6 +306,8 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Type"))
         self.label_2.setText(_translate("Dialog", "Situations"))
         self.label_3.setText(_translate("Dialog", ":"))
+        self.label_4.setText(_translate("Dialog", "#"))
+        self.button.setText(_translate("Dialog", "Back to Main Page"))
+        self.button_2.setText(_translate("Dialog", "Add to the Plan!"))
