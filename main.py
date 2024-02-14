@@ -250,14 +250,22 @@ class Screen4(QDialog):
         parentlayout2.setVerticalSpacing(40)
         global groupBox2
         groupBox2 = QGroupBox()
+        global combobox
+        global lineedit1
+        global lineedit1
         new_widget = QWidget()
         parentlayout2 = QGridLayout(new_widget)
         super(Screen4,self).__init__()
         uic.loadUi(os.path.join(basedir, "cal4.ui"), self)
         scrollarea2 = self.findChild(QScrollArea, "scrollArea")
+        lineedit1 = self.findChild(QLineEdit, "lineEdit")
+        combobox = self.findChild(QComboBox, "comboBox")
+        combobox.currentIndexChanged.connect(self.index_changed)
         button_group2.buttonClicked.connect(self.selectbutton)
         for button in button_group2.buttons():
             button.clicked.connect(self.on_button_clicked)
+    def index_changed(self):
+        
     def on_button_clicked(self, button):
         print(button.text())
     def selectbutton(self, button):

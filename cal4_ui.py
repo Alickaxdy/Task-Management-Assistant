@@ -146,29 +146,8 @@ class Ui_Dialog(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.label = QtWidgets.QLabel(parent=Dialog)
-        self.label.setGeometry(QtCore.QRect(130, 530, 201, 71))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.label.setFont(font)
-        self.label.setStyleSheet("* {\n"
-"    background-color: rgb(173, 221, 231);\n"
-"color: rgb(0, 170, 127);\n"
-"border-width: 3px;\n"
-"border-style: solid;\n"
-"border-radius: 15px;\n"
-"border-color: rgb(173, 221, 231);\n"
-"font: bold;\n"
-"}\n"
-"")
-        self.label.setText("")
-        self.label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label.setObjectName("label")
         self.lineEdit = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit.setGeometry(QtCore.QRect(690, 640, 161, 71))
+        self.lineEdit.setGeometry(QtCore.QRect(530, 520, 161, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -185,28 +164,8 @@ class Ui_Dialog(object):
         self.lineEdit.setText("")
         self.lineEdit.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit.setObjectName("lineEdit")
-        self.label_2 = QtWidgets.QLabel(parent=Dialog)
-        self.label_2.setGeometry(QtCore.QRect(790, 530, 201, 71))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("* {\n"
-"    background-color: rgb(173, 221, 231);\n"
-"color: rgb(0, 170, 127);\n"
-"border-width: 3px;\n"
-"border-style: solid;\n"
-"border-radius: 15px;\n"
-"border-color: rgb(173, 221, 231);\n"
-"font: bold;\n"
-"}\n"
-"")
-        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.label_2.setObjectName("label_2")
         self.lineEdit_2 = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit_2.setGeometry(QtCore.QRect(940, 640, 151, 71))
+        self.lineEdit_2.setGeometry(QtCore.QRect(780, 520, 151, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -224,7 +183,7 @@ class Ui_Dialog(object):
         self.lineEdit_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.label_3 = QtWidgets.QLabel(parent=Dialog)
-        self.label_3.setGeometry(QtCore.QRect(840, 640, 111, 71))
+        self.label_3.setGeometry(QtCore.QRect(680, 520, 111, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -264,10 +223,10 @@ class Ui_Dialog(object):
         self.label_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_4.setObjectName("label_4")
         self.button = QtWidgets.QPushButton(parent=Dialog)
-        self.button.setGeometry(QtCore.QRect(250, 870, 201, 101))
+        self.button.setGeometry(QtCore.QRect(90, 840, 281, 101))
         font = QtGui.QFont()
         font.setFamily("Charter")
-        font.setPointSize(20)
+        font.setPointSize(16)
         font.setBold(True)
         font.setWeight(75)
         self.button.setFont(font)
@@ -282,7 +241,7 @@ class Ui_Dialog(object):
 "")
         self.button.setObjectName("button")
         self.button_2 = QtWidgets.QPushButton(parent=Dialog)
-        self.button_2.setGeometry(QtCore.QRect(870, 870, 201, 101))
+        self.button_2.setGeometry(QtCore.QRect(740, 840, 351, 101))
         font = QtGui.QFont()
         font.setFamily("Charter")
         font.setPointSize(20)
@@ -299,6 +258,105 @@ class Ui_Dialog(object):
 "}\n"
 "")
         self.button_2.setObjectName("button_2")
+        self.comboBox = QtWidgets.QComboBox(parent=Dialog)
+        self.comboBox.setGeometry(QtCore.QRect(90, 510, 331, 91))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.comboBox.setFont(font)
+        self.comboBox.setStyleSheet("QComboBox {\n"
+"    background-color: rgb(173, 221, 231);\n"
+"    color: rgb(0, 170, 127);\n"
+"    border-width: 8px;\n"
+"    border-style: solid;\n"
+"    border-radius: 30px;\n"
+"    border-color: rgb(173, 221, 231);\n"
+"    font: bold;\n"
+"}")
+        self.comboBox.setFrame(True)
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.label_5 = QtWidgets.QLabel(parent=Dialog)
+        self.label_5.setGeometry(QtCore.QRect(680, 620, 111, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("* {\n"
+"    background-color: rgb(173, 221, 231);\n"
+"color: rgb(0, 170, 127);\n"
+"border-width: 3px;\n"
+"border-style: solid;\n"
+"border-radius: 15px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.label_5.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_5.setObjectName("label_5")
+        self.label_6 = QtWidgets.QLabel(parent=Dialog)
+        self.label_6.setGeometry(QtCore.QRect(680, 720, 111, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.label_6.setFont(font)
+        self.label_6.setStyleSheet("* {\n"
+"    background-color: rgb(173, 221, 231);\n"
+"color: rgb(0, 170, 127);\n"
+"border-width: 3px;\n"
+"border-style: solid;\n"
+"border-radius: 15px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_6.setObjectName("label_6")
+        self.lineEdit_3 = QtWidgets.QLineEdit(parent=Dialog)
+        self.lineEdit_3.setGeometry(QtCore.QRect(530, 720, 161, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_3.setFont(font)
+        self.lineEdit_3.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}")
+        self.lineEdit_3.setText("")
+        self.lineEdit_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_4 = QtWidgets.QLineEdit(parent=Dialog)
+        self.lineEdit_4.setGeometry(QtCore.QRect(780, 720, 151, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit_4.setFont(font)
+        self.lineEdit_4.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}")
+        self.lineEdit_4.setText("")
+        self.lineEdit_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lineEdit_4.setObjectName("lineEdit_4")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -306,8 +364,13 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label_2.setText(_translate("Dialog", "Situations"))
         self.label_3.setText(_translate("Dialog", ":"))
         self.label_4.setText(_translate("Dialog", "#"))
         self.button.setText(_translate("Dialog", "Back to Main Page"))
         self.button_2.setText(_translate("Dialog", "Add to the Plan!"))
+        self.comboBox.setItemText(0, _translate("Dialog", "Select Type"))
+        self.comboBox.setItemText(1, _translate("Dialog", "Daily Task"))
+        self.comboBox.setItemText(2, _translate("Dialog", "One-Time Task"))
+        self.comboBox.setItemText(3, _translate("Dialog", "Scheduled Task"))
+        self.label_5.setText(_translate("Dialog", "TO"))
+        self.label_6.setText(_translate("Dialog", ":"))
