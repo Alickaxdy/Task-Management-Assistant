@@ -361,10 +361,10 @@ class Screen4(QDialog):
             lineedit2.setVisible(1)
             labelto.setVisible(1)
             maohao1.setVisible(1)
-            lineedit3.setVisible(0)
-            lineedit4.setVisible(0)
-            maohao2.setVisible(0)
-            labelto.setText("(24-hour setting)")
+            lineedit3.setVisible(1)
+            lineedit4.setVisible(1)
+            maohao2.setVisible(1)
+            labelto.setText("Need Time")
             lineedit1.returnPressed.connect(self.checktext1)
             lineedit2.returnPressed.connect(self.checktext2)
             lineedit3.returnPressed.connect(self.checktext3)
@@ -674,7 +674,7 @@ class Screen4(QDialog):
                 """
                 )
                 lineedit2.setText("")
-        if currenttype=="Scheduled Task":
+        if currenttype=="Scheduled Task" or currenttype == "One-Time Task":
             try:
                 int(lineedit3.text())
                 flag3=True
@@ -777,6 +777,8 @@ class Screen4(QDialog):
                     a = []
                     a.append(lineedit1.text())
                     a.append(lineedit2.text())
+                    a.append(lineedit3.text())
+                    a.append(lineedit4.text())
                     allplans.append(currentbutton)
                     plans[0].update({currentbutton : a})
                     planbutton_text = f"{currenttype}\n{currentbutton}\n{a[0]} : {a[1]} Hours"
@@ -966,10 +968,65 @@ class Screen4(QDialog):
         global deleteplansbutton
         deleteplansbutton.setText("Delete Plans")
     def gotoscreen5(self):
-        global d
+        widget.setCurrentIndex(4)
+        global planbutton_list
+        global plans
+        global timeline
+        timeline = []
+        counts = 0
+        resttime = 24*60
+        for i in plans:
+            for j in i:
+                counts += 1
+        for i in range(25*60):
+            timeline.append("")
+        for i in plans[2]:
+            if i[0]==i[2]:
+                for j in range(i[1], i[3]+1):
+                    timeline[i[0]*60+j] = i
+                    resttime -= 1
+            else:
+                for j in range (i[1], 60):
+                    timeline[i[0]*60+j] = i
+                    resttime -= 1
+                for j in range (i[0]+1, i[2]+1):
+                    for k in range (60):
+                        timeline[j*60+k] = i
+                        resttime -= 1
+                for j in range (0, i[3]):
+                    timeline[i[2]*60+j] = i
+                    resttime -= 1
+        sorted_dic = dict(sorted(plans[2].items(), key = lambda item: (item[1][0]*60 + item[1][1])))
+        ii = 0
+        x = sorted_dic.keys()
+        sorted_dic[x[ii]].append(0)
+        print(sorted_dic[0])
+        for i in range(len(timeline)):
+            if i == "":
+                if (sorted_dic[x[ii]][2] == 0 and sorted_dic[x[ii]][3] == 0) or i==sorted_dic[x[ii][0]]*60+sorted_dic[x[ii][1]]:
+                    while sorted_dic[x[ii]][2] == 0 and sorted_dic[x[ii]][3] == 0 and i<sorted_dic[x[ii][0]]*60+sorted_dic[x[ii][1]]:
+                        ii += 1
+                elif sorted_dic[x[ii]][3] == 0:
+                    sorted_dic[x[ii]][2] -= 1
+                    sorted_dic[x[ii]][3] == 59
+                    timeline[i] = x[ii]
+                    resttime -= 1
+                    sorted_dic[x[ii]][4] += 1
+                else:
+                    sorted_dic[x[ii]][3] -= 1
+                    timeline[i] = x[ii]
+                    resttime -= 1
+                    sorted_dic[x[ii]][4] += 1
+        sorted_dic2
         
+                    
         
-        
+
+class Screen5(QDialog):
+    def __init__(self):
+        super(Screen5,self).__init__()
+        uic.loadUi(os.path.join(basedir, "cal5.ui"), self)
+                
         
 app = QApplication(sys.argv)
 
@@ -978,9 +1035,11 @@ UIWindow = UI()
 screen2=Screen2()
 screen3 = Screen3()
 screen4 = Screen4()
+screen5 = Screen5()
 widget.addWidget(UIWindow)
 widget.addWidget(screen2)
 widget.addWidget(screen3)
 widget.addWidget(screen4)
+widget.addWidget(screen5)
 widget.show()
 app.exec()

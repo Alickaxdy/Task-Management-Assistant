@@ -613,7 +613,7 @@ font: bold;
 </string>
    </property>
    <property name="text">
-    <string>Next</string>
+    <string>Ready!</string>
    </property>
   </widget>
   <widget class="QScrollArea" name="planList">

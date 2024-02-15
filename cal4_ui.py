@@ -574,6 +574,6 @@ class Ui_Dialog(object):
         self.label_5.setText(_translate("Dialog", "TO"))
         self.label_6.setText(_translate("Dialog", ":"))
         self.label_7.setText(_translate("Dialog", "0"))
-        self.prepareButton.setText(_translate("Dialog", "Next"))
+        self.prepareButton.setText(_translate("Dialog", "Ready!"))
         self.label_8.setText(_translate("Dialog", "Plan List"))
         self.deleteButton.setText(_translate("Dialog", "Delete Plans"))
