@@ -16,7 +16,7 @@ class Ui_Dialog(object):
         Dialog.setStyleSheet("color: rgb(70, 255, 153);\n"
 "background-color: rgb(85, 170, 255);")
         self.scrollArea = QtWidgets.QScrollArea(parent=Dialog)
-        self.scrollArea.setGeometry(QtCore.QRect(70, 50, 1311, 381))
+        self.scrollArea.setGeometry(QtCore.QRect(70, 50, 1001, 381))
         self.scrollArea.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
 "border-width: 12px;\n"
 "border-style: solid;\n"
@@ -141,13 +141,13 @@ class Ui_Dialog(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 1287, 357))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 977, 357))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.lineEdit = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit.setGeometry(QtCore.QRect(530, 520, 161, 71))
+        self.lineEdit.setGeometry(QtCore.QRect(580, 590, 161, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -165,7 +165,7 @@ class Ui_Dialog(object):
         self.lineEdit.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit.setObjectName("lineEdit")
         self.lineEdit_2 = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit_2.setGeometry(QtCore.QRect(780, 520, 151, 71))
+        self.lineEdit_2.setGeometry(QtCore.QRect(830, 590, 151, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -183,7 +183,7 @@ class Ui_Dialog(object):
         self.lineEdit_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.label_3 = QtWidgets.QLabel(parent=Dialog)
-        self.label_3.setGeometry(QtCore.QRect(680, 520, 111, 71))
+        self.label_3.setGeometry(QtCore.QRect(730, 590, 111, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -203,7 +203,7 @@ class Ui_Dialog(object):
         self.label_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(parent=Dialog)
-        self.label_4.setGeometry(QtCore.QRect(1440, 50, 101, 71))
+        self.label_4.setGeometry(QtCore.QRect(1090, 20, 171, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -240,15 +240,15 @@ class Ui_Dialog(object):
 "}\n"
 "")
         self.button.setObjectName("button")
-        self.button_2 = QtWidgets.QPushButton(parent=Dialog)
-        self.button_2.setGeometry(QtCore.QRect(740, 840, 351, 101))
+        self.addPlan = QtWidgets.QPushButton(parent=Dialog)
+        self.addPlan.setGeometry(QtCore.QRect(740, 850, 351, 101))
         font = QtGui.QFont()
         font.setFamily("Charter")
         font.setPointSize(20)
         font.setBold(True)
         font.setWeight(75)
-        self.button_2.setFont(font)
-        self.button_2.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+        self.addPlan.setFont(font)
+        self.addPlan.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
 "color: rgb(34, 137, 146);\n"
 "border-width: 9px;\n"
 "border-style: solid;\n"
@@ -257,24 +257,16 @@ class Ui_Dialog(object):
 "font: bold;\n"
 "}\n"
 "")
-        self.button_2.setObjectName("button_2")
+        self.addPlan.setObjectName("addPlan")
         self.comboBox = QtWidgets.QComboBox(parent=Dialog)
-        self.comboBox.setGeometry(QtCore.QRect(90, 510, 331, 91))
+        self.comboBox.setGeometry(QtCore.QRect(140, 480, 331, 91))
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(75)
         self.comboBox.setFont(font)
-        self.comboBox.setStyleSheet("QComboBox {\n"
-"    background-color: rgb(173, 221, 231);\n"
-"    color: rgb(0, 170, 127);\n"
-"    border-width: 8px;\n"
-"    border-style: solid;\n"
-"    border-radius: 30px;\n"
-"    border-color: rgb(173, 221, 231);\n"
-"    font: bold;\n"
-"}")
+        self.comboBox.setStyleSheet("")
         self.comboBox.setFrame(True)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.addItem("")
@@ -282,7 +274,7 @@ class Ui_Dialog(object):
         self.comboBox.addItem("")
         self.comboBox.addItem("")
         self.label_5 = QtWidgets.QLabel(parent=Dialog)
-        self.label_5.setGeometry(QtCore.QRect(680, 620, 111, 71))
+        self.label_5.setGeometry(QtCore.QRect(550, 710, 471, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -302,7 +294,7 @@ class Ui_Dialog(object):
         self.label_5.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_5.setObjectName("label_5")
         self.label_6 = QtWidgets.QLabel(parent=Dialog)
-        self.label_6.setGeometry(QtCore.QRect(680, 720, 111, 71))
+        self.label_6.setGeometry(QtCore.QRect(1190, 710, 111, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -322,7 +314,7 @@ class Ui_Dialog(object):
         self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_6.setObjectName("label_6")
         self.lineEdit_3 = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit_3.setGeometry(QtCore.QRect(530, 720, 161, 71))
+        self.lineEdit_3.setGeometry(QtCore.QRect(1040, 710, 161, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -340,7 +332,7 @@ class Ui_Dialog(object):
         self.lineEdit_3.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit_3.setObjectName("lineEdit_3")
         self.lineEdit_4 = QtWidgets.QLineEdit(parent=Dialog)
-        self.lineEdit_4.setGeometry(QtCore.QRect(780, 720, 151, 71))
+        self.lineEdit_4.setGeometry(QtCore.QRect(1290, 710, 151, 71))
         font = QtGui.QFont()
         font.setPointSize(20)
         font.setBold(True)
@@ -357,6 +349,213 @@ class Ui_Dialog(object):
         self.lineEdit_4.setText("")
         self.lineEdit_4.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit_4.setObjectName("lineEdit_4")
+        self.label_7 = QtWidgets.QLabel(parent=Dialog)
+        self.label_7.setGeometry(QtCore.QRect(1250, 20, 71, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.label_7.setFont(font)
+        self.label_7.setStyleSheet("* {\n"
+"    background-color: rgb(173, 221, 231);\n"
+"color: rgb(170, 85, 255);\n"
+"border-width: 3px;\n"
+"border-style: solid;\n"
+"border-radius: 15px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.label_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_7.setObjectName("label_7")
+        self.prepareButton = QtWidgets.QPushButton(parent=Dialog)
+        self.prepareButton.setGeometry(QtCore.QRect(1370, 840, 211, 121))
+        font = QtGui.QFont()
+        font.setFamily("Charter")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.prepareButton.setFont(font)
+        self.prepareButton.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.prepareButton.setObjectName("prepareButton")
+        self.planList = QtWidgets.QScrollArea(parent=Dialog)
+        self.planList.setGeometry(QtCore.QRect(1110, 150, 521, 381))
+        self.planList.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"border-width: 12px;\n"
+"border-style: solid;\n"
+"border-radius: 40px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"}\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background-color: rgb(88, 182, 255);\n"
+"    width: 16px;\n"
+"    margin: 15px 0 15px 0;\n"
+"    border-radius: 8px;\n"
+"}\n"
+"/* Handle Bar Vertical*/\n"
+"QScrollBar::handle:vertical {\n"
+"    background-color: rgb(98, 161, 232);\n"
+"    min-height: 30px;\n"
+"}\n"
+"QScrollBar::handle:vertical:hover {\n"
+"    background-color: rgb(173, 244, 179);\n"
+"}\n"
+"QScrollBar::handle:vertical:pressed {\n"
+"    background-color: rgb(128, 217, 129);\n"
+"}\n"
+"/*button top scrollbar*/\n"
+"QScrollBar::sub-line:vertical{\n"
+"    border: none;\n"
+"    background-color:  rgb(110, 248, 243);\n"
+"    height: 15;\n"
+"    border-top-left-radius: 7px;\n"
+"    border-top-right-radius: 7px;\n"
+"    subcontrol-position: top;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::sub-line:vertical:hover {\n"
+"    background-color: rgb(0, 161, 118);\n"
+"}\n"
+"QScrollBar::sub-line:vertical:pressed {\n"
+"    background-color: rgb(0, 140, 103);\n"
+"}\n"
+"\n"
+"/*button bottom  scrollbar*/\n"
+"QScrollBar::add-line:vertical{\n"
+"    border: none;\n"
+"    background-color:  rgb(110, 248, 243);\n"
+"    height: 15;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"    subcontrol-position: bottom;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::add-line:vertical:hover {\n"
+"    background-color: rgb(0, 161, 118);\n"
+"}\n"
+"QScrollBar::add-line:vertical:pressed {\n"
+"    background-color: rgb(0, 140, 103);\n"
+"}\n"
+"/*Reset Arrow*/\n"
+"QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {\n"
+"    background: none;\n"
+"}\n"
+"QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {\n"
+"    background-color: rgb(225, 215, 222);\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    border: none;\n"
+"    background-color: rgb(0, 239, 115);\n"
+"    margin: 0px 15 0px 15;\n"
+"    hieght: 14px;\n"
+"}\n"
+"/* Handle Bar Horizontal*/\n"
+"QScrollBar::handle:horizontal {\n"
+"    background-color: rgb(0, 189, 95);\n"
+"    min-width: 30px;\n"
+"}\n"
+"QScrollBar::handle:horizontal:hover {\n"
+"    background-color: rgb(0, 161, 118);\n"
+"}\n"
+"QScrollBar::handle:horizontal:pressed {\n"
+"    background-color: rgb(0, 140, 103);\n"
+"}\n"
+"/*button top scrollbar*/\n"
+"QScrollBar::sub-line:horizontal{\n"
+"    border: none;\n"
+"    background-color:  rgb(0, 239, 115);\n"
+"    width: 15;\n"
+"    border-top-left-radius: 7px;\n"
+"    border-bottom-left-radius: 7px;\n"
+"    subcontrol-position: left;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::sub-line:horizontal:hover {\n"
+"    background-color: rgb(0, 161, 118);\n"
+"}\n"
+"QScrollBar::sub-line:horizontal:pressed {\n"
+"    background-color: rgb(0, 140, 103);\n"
+"}\n"
+"/*button bottom  scrollbar*/\n"
+"QScrollBar::add-line:horizontal{\n"
+"    border: none;\n"
+"    background-color:  rgb(0, 239, 115);\n"
+"    width: 15;\n"
+"    border-top-right-radius: 7px;\n"
+"    border-bottom-right-radius: 7px;\n"
+"    subcontrol-position: right;\n"
+"    subcontrol-origin: margin;\n"
+"}\n"
+"QScrollBar::add-line:horizontal:hover {\n"
+"    background-color: rgb(0, 161, 118);\n"
+"}\n"
+"QScrollBar::add-line:horizontal:pressed {\n"
+"    background-color: rgb(0, 140, 103);\n"
+"}\n"
+"/*Reset Arrow*/\n"
+"QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal {\n"
+"    background: none;\n"
+"}\n"
+"QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {\n"
+"    background-color: rgb(0, 207, 152);\n"
+"}")
+        self.planList.setWidgetResizable(True)
+        self.planList.setObjectName("planList")
+        self.scrollAreaWidgetContents_2 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 497, 357))
+        self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_2)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.planList.setWidget(self.scrollAreaWidgetContents_2)
+        self.label_8 = QtWidgets.QLabel(parent=Dialog)
+        self.label_8.setGeometry(QtCore.QRect(1290, 100, 171, 51))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.label_8.setFont(font)
+        self.label_8.setStyleSheet("* {\n"
+"    background-color: rgb(173, 221, 231);\n"
+"color: rgb(170, 85, 255);\n"
+"border-width: 3px;\n"
+"border-style: solid;\n"
+"border-radius: 15px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.label_8.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_8.setObjectName("label_8")
+        self.deleteButton = QtWidgets.QPushButton(parent=Dialog)
+        self.deleteButton.setGeometry(QtCore.QRect(1200, 540, 351, 101))
+        font = QtGui.QFont()
+        font.setFamily("Charter")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.deleteButton.setFont(font)
+        self.deleteButton.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.deleteButton.setObjectName("deleteButton")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -365,12 +564,16 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_3.setText(_translate("Dialog", ":"))
-        self.label_4.setText(_translate("Dialog", "#"))
+        self.label_4.setText(_translate("Dialog", "# of Tasks:"))
         self.button.setText(_translate("Dialog", "Back to Main Page"))
-        self.button_2.setText(_translate("Dialog", "Add to the Plan!"))
+        self.addPlan.setText(_translate("Dialog", "Add to the Plan!"))
         self.comboBox.setItemText(0, _translate("Dialog", "Select Type"))
         self.comboBox.setItemText(1, _translate("Dialog", "Daily Task"))
         self.comboBox.setItemText(2, _translate("Dialog", "One-Time Task"))
         self.comboBox.setItemText(3, _translate("Dialog", "Scheduled Task"))
         self.label_5.setText(_translate("Dialog", "TO"))
         self.label_6.setText(_translate("Dialog", ":"))
+        self.label_7.setText(_translate("Dialog", "0"))
+        self.prepareButton.setText(_translate("Dialog", "Next"))
+        self.label_8.setText(_translate("Dialog", "Plan List"))
+        self.deleteButton.setText(_translate("Dialog", "Delete Plans"))
