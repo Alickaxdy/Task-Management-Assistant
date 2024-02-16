@@ -1,2 +1,2 @@
-
-        button_group2.buttonClicked.connect(self.selectbutton)
+ushButton(original_btn.text(), self)
+            self.new_btn.setF

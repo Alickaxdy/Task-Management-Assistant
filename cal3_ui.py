@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant-1\cal3.ui'
+# Form implementation generated from reading ui file 'c:\Users\owner\Documents\桌面文件\记带功\Task-Management-Assistant\Task-Management-Assistant\cal3.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -12,14 +12,28 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(400, 300)
+        Dialog.resize(1303, 1111)
+        Dialog.setMaximumSize(QtCore.QSize(1786, 1111))
         Dialog.setStyleSheet("color: rgb(70, 255, 153);\n"
 "background-color: rgb(85, 170, 127);")
-        self.button = QtWidgets.QPushButton(parent=Dialog)
-        self.button.setGeometry(QtCore.QRect(110, 110, 181, 61))
-        self.button.setStyleSheet("background-color: rgb(255, 255, 255);\n"
-"color: rgb(0, 0, 0);")
-        self.button.setObjectName("button")
+        self.backButton = QtWidgets.QPushButton(parent=Dialog)
+        self.backButton.setGeometry(QtCore.QRect(440, 790, 431, 101))
+        font = QtGui.QFont()
+        font.setFamily("Charter")
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setWeight(75)
+        self.backButton.setFont(font)
+        self.backButton.setStyleSheet("* {background-color: rgb(173, 221, 231);\n"
+"color: rgb(34, 137, 146);\n"
+"border-width: 9px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.backButton.setObjectName("backButton")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -27,4 +41,4 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.button.setText(_translate("Dialog", "Click Me Back Mainwindow!"))
+        self.backButton.setText(_translate("Dialog", "Back To the Main Window!"))

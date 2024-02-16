@@ -13,7 +13,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(2100, 1260)
-        MainWindow.setMinimumSize(QtCore.QSize(2100, 1260))
+        MainWindow.setMinimumSize(QtCore.QSize(0, 0))
+        MainWindow.setSizeIncrement(QtCore.QSize(0, 0))
         MainWindow.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(0, 251, 255), stop:1 rgb(0, 160, 200));\n"
 "")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
@@ -178,7 +179,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 503, 839))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 502, 839))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")

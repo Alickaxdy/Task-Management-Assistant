@@ -4,7 +4,8 @@ import struct
 from PyQt6 import QtCore, QtGui, QtWidgets, uic
 from PyQt6.uic import load_ui
 from PyQt6.QtWidgets import *
-from PyQt6.QtCore import QTimer
+from PyQt6.QtCore import QTimer, QDateTime
+from PyQt6.QtGui import QPixmap, QPalette, QBrush
 
 basedir = os.path.dirname(__file__)
 ownsatis = {}#saves the goal satisfaction for each day.
@@ -25,7 +26,10 @@ def clear_and_delete_buttons_from_group(button_group):
 class ScrollableButtonWidget(QWidget):
     def __init__(self):
         super().__init__()
+        currentDateTime = QDateTime.currentDateTime()
 
+# Format the date and time
+        formattedDateTime = currentDateTime.toString("yyyy-MM-dd HH:mm")
         # Create a layout for the scrollable area
 
         # Create buttons and add them to the layout
@@ -47,6 +51,8 @@ class UI(QMainWindow):
     def __init__(self):
         super(UI, self).__init__()
         uic.loadUi(os.path.join(basedir, "cal.ui"), self)
+        widget.resize(2100, 1260)
+        self.showMaximized()
         self.calendar = self.findChild(QCalendarWidget, "calendar")
         self.label = self.findChild(QLabel, "label")
         self.label2 = self.findChild(QLabel, "label_3")
@@ -55,7 +61,7 @@ class UI(QMainWindow):
         self.button2 = self.findChild(QPushButton, "pushButton_2")
         self.button3 = self.findChild(QPushButton, "pushButton_3")
         self.button1.clicked.connect(self.gotoscreen2)
-        self.button2.clicked.connect(self.gotoscreen3)
+        self.button2.clicked.connect(self.gotoscreen5)
         self.button3.clicked.connect(self.gotoscreen4)
         self.scrollarea = self.findChild(QScrollArea, "scrollArea")
         self.scrollarea.setWidgetResizable(True)
@@ -65,9 +71,61 @@ class UI(QMainWindow):
         self.label.setText(str(dateSelected.toString()))
     def gotoscreen2(self):
         widget.setCurrentIndex(1)
+        widget.resize(1680, 1050)
 
-    def gotoscreen3(self):
-        widget.setCurrentIndex(2)
+    def gotoscreen5(self):
+        widget.setCurrentIndex(4)
+        global planbutton_list
+        global plans
+        global timeline
+        timeline = []
+        counts = 0
+        resttime = 24*60
+        for i in plans:
+            for j in i:
+                counts += 1
+        for i in range(25*60):
+            timeline.append("")
+        for i in plans[2]:
+            if i[0]==i[2]:
+                for j in range(i[1], i[3]+1):
+                    timeline[i[0]*60+j] = i
+                    resttime -= 1
+            else:
+                for j in range (i[1], 60):
+                    timeline[i[0]*60+j] = i
+                    resttime -= 1
+                for j in range (i[0]+1, i[2]+1):
+                    for k in range (60):
+                        timeline[j*60+k] = i
+                        resttime -= 1
+                for j in range (0, i[3]):
+                    timeline[i[2]*60+j] = i
+                    resttime -= 1
+        sorted_dic = dict(sorted(plans[1].items(), key = lambda item: (item[1][0]*60 + item[1][1])))
+        ii = 0
+        x = sorted_dic.keys()
+        print(sorted_dic)
+        sorted_dic[x[ii]].append(0)
+        print(sorted_dic[0])
+        for i in range(len(timeline)):
+            if i == "":
+                if (sorted_dic[x[ii]][2] == 0 and sorted_dic[x[ii]][3] == 0) or i==sorted_dic[x[ii][0]]*60+sorted_dic[x[ii][1]]:
+                    while sorted_dic[x[ii]][2] == 0 and sorted_dic[x[ii]][3] == 0 and i<sorted_dic[x[ii][0]]*60+sorted_dic[x[ii][1]]:
+                        ii += 1
+                elif sorted_dic[x[ii]][3] == 0:
+                    sorted_dic[x[ii]][2] -= 1
+                    sorted_dic[x[ii]][3] == 59
+                    timeline[i] = x[ii]
+                    resttime -= 1
+                    sorted_dic[x[ii]][4] += 1
+                else:
+                    sorted_dic[x[ii]][3] -= 1
+                    timeline[i] = x[ii]
+                    resttime -= 1
+                    sorted_dic[x[ii]][4] += 1
+        sorted_dic2 = dict(sorted(plan[0].items(), key = lambda item: (item[0][0]*60 + item[0][1])))
+        widget.resize(1336, 881)
     def gotoscreen4(self):
         widget.setCurrentIndex(3)
         global scrollarea2
@@ -100,14 +158,24 @@ class UI(QMainWindow):
             parentlayout2.addWidget(self.new_btn, int(i/2)+1,i%2+1)
         groupBox2.setLayout(parentlayout2)
         scrollarea2.setWidget(groupBox2)
+        widget.resize(1680, 1050)
 class Screen3(QDialog):
     def __init__(self):
-        super(Screen3,self).__init__()
+        super(Screen3, self).__init__()
+        basedir = os.path.dirname(os.path.abspath(__file__))
         uic.loadUi(os.path.join(basedir, "cal3.ui"), self)
-        self.button1 = self.findChild(QPushButton, "button")
-        self.button1.clicked.connect(self.gotoscreen1)
+        self.initUI()
+
+    def initUI(self):
+        current_folder = os.path.dirname(os.path.abspath(__file__))
+        image_path = os.path.join(current_folder, 'submission.png')
+        image_path = image_path.replace("\\", "/")
+        print ("hahah", image_path)
+        # Use a stylesheet to set the background image
+        self.setStyleSheet(f"QDialog {{background-image: url({image_path});}}")
     def gotoscreen1(self):
         widget.setCurrentIndex(0)
+        widget.resize(2100, 1260)
 class Screen2(QDialog):
     def __init__(self):
         global parentlayout
@@ -134,6 +202,7 @@ class Screen2(QDialog):
         button_group.buttonClicked.connect(self.deletebuttonfunc)
     def gotoscreen1(self):
         widget.setCurrentIndex(0)
+        widget.resize(2100, 1260)
     def settext(self):
         global i
         global j
@@ -335,7 +404,7 @@ class Screen4(QDialog):
             }}
         """)
         addplanbutton.clicked.connect(self.checkalltext)
-        preparebutton.clicked.connect(self.gotoscreen5)
+        preparebutton.clicked.connect(self.gotoscreen3)
         for button in button_group2.buttons():
             button.clicked.connect(self.on_button_clicked)
         planbuttongroup.buttonClicked.connect(self.deletebuttonfunc2)
@@ -967,57 +1036,9 @@ class Screen4(QDialog):
     def tunouttime2(self):
         global deleteplansbutton
         deleteplansbutton.setText("Delete Plans")
-    def gotoscreen5(self):
-        widget.setCurrentIndex(4)
-        global planbutton_list
-        global plans
-        global timeline
-        timeline = []
-        counts = 0
-        resttime = 24*60
-        for i in plans:
-            for j in i:
-                counts += 1
-        for i in range(25*60):
-            timeline.append("")
-        for i in plans[2]:
-            if i[0]==i[2]:
-                for j in range(i[1], i[3]+1):
-                    timeline[i[0]*60+j] = i
-                    resttime -= 1
-            else:
-                for j in range (i[1], 60):
-                    timeline[i[0]*60+j] = i
-                    resttime -= 1
-                for j in range (i[0]+1, i[2]+1):
-                    for k in range (60):
-                        timeline[j*60+k] = i
-                        resttime -= 1
-                for j in range (0, i[3]):
-                    timeline[i[2]*60+j] = i
-                    resttime -= 1
-        sorted_dic = dict(sorted(plans[2].items(), key = lambda item: (item[1][0]*60 + item[1][1])))
-        ii = 0
-        x = sorted_dic.keys()
-        sorted_dic[x[ii]].append(0)
-        print(sorted_dic[0])
-        for i in range(len(timeline)):
-            if i == "":
-                if (sorted_dic[x[ii]][2] == 0 and sorted_dic[x[ii]][3] == 0) or i==sorted_dic[x[ii][0]]*60+sorted_dic[x[ii][1]]:
-                    while sorted_dic[x[ii]][2] == 0 and sorted_dic[x[ii]][3] == 0 and i<sorted_dic[x[ii][0]]*60+sorted_dic[x[ii][1]]:
-                        ii += 1
-                elif sorted_dic[x[ii]][3] == 0:
-                    sorted_dic[x[ii]][2] -= 1
-                    sorted_dic[x[ii]][3] == 59
-                    timeline[i] = x[ii]
-                    resttime -= 1
-                    sorted_dic[x[ii]][4] += 1
-                else:
-                    sorted_dic[x[ii]][3] -= 1
-                    timeline[i] = x[ii]
-                    resttime -= 1
-                    sorted_dic[x[ii]][4] += 1
-        sorted_dic2
+    def gotoscreen3(self):
+        widget.setCurrentIndex(2)
+        widget.resize(1303, 1111)
         
                     
         
@@ -1041,5 +1062,6 @@ widget.addWidget(screen2)
 widget.addWidget(screen3)
 widget.addWidget(screen4)
 widget.addWidget(screen5)
+widget.resize(2100, 1260)
 widget.show()
 app.exec()

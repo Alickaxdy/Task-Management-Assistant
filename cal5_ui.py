@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1336, 849)
+        Dialog.resize(1336, 881)
         Dialog.setStyleSheet("color: rgb(70, 255, 153);\n"
 "background-color: rgb(85, 170, 255);")
         self.label_5 = QtWidgets.QLabel(parent=Dialog)
@@ -45,7 +45,7 @@ class Ui_Dialog(object):
         self.label_6.setFont(font)
         self.label_6.setStyleSheet("* {\n"
 "    background-color: rgb(170, 85, 255);\n"
-"color: rgb(0, 170, 255);\n"
+"color: rgb(218, 255, 82);\n"
 "border-width: 3px;\n"
 "border-style: solid;\n"
 "border-radius: 25px;\n"
@@ -55,17 +55,37 @@ class Ui_Dialog(object):
 "")
         self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_6.setObjectName("label_6")
-        self.label_7 = QtWidgets.QLabel(parent=Dialog)
-        self.label_7.setGeometry(QtCore.QRect(50, 310, 501, 181))
+        self.nowPlan = QtWidgets.QLabel(parent=Dialog)
+        self.nowPlan.setGeometry(QtCore.QRect(50, 310, 501, 181))
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
         font.setItalic(False)
         font.setWeight(75)
+        self.nowPlan.setFont(font)
+        self.nowPlan.setStyleSheet("* {\n"
+"    background-color: rgb(3, 213, 255);\n"
+"color: rgb(200, 78, 149);\n"
+"border-width: 3px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.nowPlan.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.nowPlan.setObjectName("nowPlan")
+        self.label_7 = QtWidgets.QLabel(parent=Dialog)
+        self.label_7.setGeometry(QtCore.QRect(900, 220, 181, 71))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("* {\n"
-"    background-color:rgb(0, 255, 255);\n"
-"color: rgb(200, 78, 149);\n"
+"    background-color: rgb(172, 255, 39);\n"
+"color: rgb(0, 170, 255);\n"
 "border-width: 3px;\n"
 "border-style: solid;\n"
 "border-radius: 25px;\n"
@@ -75,6 +95,26 @@ class Ui_Dialog(object):
 "")
         self.label_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_7.setObjectName("label_7")
+        self.nextPlan = QtWidgets.QLabel(parent=Dialog)
+        self.nextPlan.setGeometry(QtCore.QRect(730, 310, 501, 181))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.nextPlan.setFont(font)
+        self.nextPlan.setStyleSheet("* {\n"
+"    background-color: rgb(3, 213, 255);\n"
+"color: rgb(200, 78, 149);\n"
+"border-width: 3px;\n"
+"border-style: solid;\n"
+"border-radius: 25px;\n"
+"border-color: rgb(173, 221, 231);\n"
+"font: bold;\n"
+"}\n"
+"")
+        self.nextPlan.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.nextPlan.setObjectName("nextPlan")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -84,4 +124,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label_5.setText(_translate("Dialog", "Remind!"))
         self.label_6.setText(_translate("Dialog", "Now"))
+        self.nowPlan.setText(_translate("Dialog", "Now"))
         self.label_7.setText(_translate("Dialog", "Now"))
+        self.nextPlan.setText(_translate("Dialog", "Now"))
